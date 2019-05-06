@@ -4,9 +4,13 @@
 
 <h1>Countries Page</h1>
 
-@foreach (Country country in Model)
+@foreach (var country in Model)
 {
-  <h3>@country.CountryName</h3>
+  <li><a href="countries/@country.CountryCode">Country: @country.CountryName</a></li>
+  /* <p>Country Code: @country.CountryCode</p>
+  <p>Population: @country.Population</p>
+  <p>Capital Id: @country.CapitalId</p>
+  <p>Head Of State: @country.HeadOfState</p> */
 }
 
 

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using World.Models;
 using System.Collections.Generic;
+using System;
 
 namespace World.Controllers
 {
@@ -14,7 +15,14 @@ namespace World.Controllers
           return View(allCountries);
         }
 
-        
+        [HttpGet("/countries/{countryCode}")]
+        public ActionResult Show(string countryCode)
+        {
+          Country selectedCountry = Country.GetCountryById(countryCode);
+          return View(selectedCountry);
+        }
+
+
     // [HttpGet("/categories/{categoryId}/items/new")]
     // public ActionResult New(int categoryId)
     // {
