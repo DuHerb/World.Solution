@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Countries Page</h1>
+
+@foreach (Country country in Model)
+{
+  <h3>@country.CountryName</h3>
+}
+
+
+@* <a href="countries/">View all countries</a> *@
+<a href="cities/">View all cities</a>
