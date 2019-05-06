@@ -18,8 +18,13 @@ namespace World.Controllers
         [HttpGet("/countries/{countryCode}")]
         public ActionResult Show(string countryCode)
         {
+          Dictionary<string, object> model = new Dictionary<string, object> {};
           Country selectedCountry = Country.GetCountryById(countryCode);
-          return View(selectedCountry);
+          List<City> selectedCities = City.GetCitiesByCountryCode(countryCode);
+          model.Add("country", selectedCountry);
+          model.Add("cities", selectedCities);
+
+          return View(model);
         }
 
 

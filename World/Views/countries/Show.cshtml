@@ -2,9 +2,17 @@
   Layout = "_Layout";
 }
 
-<h2>@Model.CountryName</h2>
+<h1>@Model["country"].CountryName</h1>
 
-<p>Country Code: @Model.CountryCode</p>
-<p>Population: @Model.Population</p>
-<p>Capital Id: @Model.CapitalId</p>
-<p>Head Of State: @Model.HeadOfState</p>
+<p>Country Code: @Model["country"].CountryCode</p>
+<p>Population: @Model["country"].Population</p>
+<p>Capital Id: @Model["country"].CapitalId</p>
+<p>Head Of State: @Model["country"].HeadOfState</p>
+
+<h2>Cities of @Model["country"].CountryName:</h2>
+<ol>
+@foreach (var city in @Model["cities"])
+{
+  <li><a href="/countries/@Model["country"].CountryCode/cities/@city.CityId">@city.CityName</a></li>
+}
+</ol>

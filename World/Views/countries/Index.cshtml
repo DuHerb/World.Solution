@@ -6,7 +6,7 @@
 
 @foreach (var country in Model)
 {
-  <li><a href="countries/@country.CountryCode">Country: @country.CountryName</a></li>
+  <li><a href="/countries/@country.CountryCode">Country: @country.CountryName</a></li>
   /* <p>Country Code: @country.CountryCode</p>
   <p>Population: @country.Population</p>
   <p>Capital Id: @country.CapitalId</p>
@@ -15,4 +15,4 @@
 
 
 @* <a href="countries/">View all countries</a> *@
-<a href="cities/">View all cities</a>
+@* <a href="/cities/">View all cities</a> *@
